@@ -16,12 +16,13 @@ class CreateContacts extends React.Component {
         console.log(this.state);
         fetch("https://sandbox-api.veem.com/veem/v1.1/contacts", {
             method: "POST",
-            mode: "no-cors",
             headers: {
-                Accept: "application/json",
-                "x-rapidapi-host": "https://sandbox-api.veem.com",
+                Accept: "*/*",
                 "Content-Type": "application/json",
+                "Accept-Encoding": "gzip,deflate,br",
+                Connection: "keep-alive",
                 Authorization: " Bearer 654d9531-8d7e-4180-a64e-f8ddc87dccf6",
+                "X-REQUEST-ID": "Bearer 654d9531-8d7e-4180-a64e-f8ddc87dccf6"
             },
             body: JSON.stringify({
                 email: "sinha.nidhi02@gmail.com",
