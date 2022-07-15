@@ -16,6 +16,7 @@ class CreateContacts extends React.Component {
         console.log(this.state);
         fetch("https://sandbox-api.veem.com/veem/v1.1/contacts", {
             method: "POST",
+            mode: "no-cors",
             headers: {
                 Accept: "application/json",
                 "x-rapidapi-host": "https://sandbox-api.veem.com",
