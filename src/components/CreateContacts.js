@@ -17,7 +17,7 @@ class CreateContacts extends React.Component {
         fetch("https://sandbox-api.veem.com/veem/v1.1/contacts", {
             method: "POST",
             headers: {
-                mode:"cors",
+                mode:"no-cors",
                 "Content-Type": "application/json",
                 Authorization: " Bearer 654d9531-8d7e-4180-a64e-f8ddc87dccf6",
                 "X-REQUEST-ID": "Bearer 654d9531-8d7e-4180-a64e-f8ddc87dccf6",
