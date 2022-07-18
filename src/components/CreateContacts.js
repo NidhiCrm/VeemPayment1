@@ -6,6 +6,15 @@ class CreateContacts extends React.Component {
         email: "",
     };
 
+    veembody = {
+        "email": "sinha.nidhi02@gmail.com",
+        "firstName": "Nid",
+        "lastName": "S",
+        "isoCountryCode": "us",
+        "phoneDialCode": "+1",
+        "phoneNumber": "9379015288"
+    };
+
     create = (e) => {
         e.preventDefault();
         if(this.state.email === "" && this.state.name === ""){
@@ -17,20 +26,15 @@ class CreateContacts extends React.Component {
         fetch("https://sandbox-api.veem.com/veem/v1.1/contacts", {
             method: "POST",
             headers: {
-                mode:"no-cors",
+                //"mode":"no-cors",
                 "Content-Type": "application/json",
-                Authorization: " Bearer 654d9531-8d7e-4180-a64e-f8ddc87dccf6",
-                "X-REQUEST-ID": "Bearer 654d9531-8d7e-4180-a64e-f8ddc87dccf6",
-                "Access-Control-Allow-Origin": "*"
+                "Authorization": " Bearer 03026508-e322-4025-b194-54184c10fbc0",
+                "X-REQUEST-ID": "Bearer 03026508-e322-4025-b194-54184c10fbc0",
+                "Access-Control-Allow-Origin": "*",
+                "Accept": "*/*",
+                "Connection": "keep-alive"
             },
-            body: JSON.stringify({
-                email: "sinha.nidhi02@gmail.com",
-                firstName: "Nid",
-                lastName: "S",
-                isoCountryCode: "us",
-                phoneDialCode: "+1",
-                phoneNumber: "9379015288"
-            })
+            body: JSON.stringify(this.veembody)
         })
             .then((response) => response.json())
             .then((response) => {
